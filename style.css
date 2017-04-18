@@ -1,0 +1,367 @@
+@import "fonts.css";
+/*todo: zero should be without any units*/
+/*-------------------Общие параметры------------*/
+*{
+padding: 0;
+margin: 0;
+}
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.wrapper{
+	min-height: 100%; 
+	overflow: hidden;
+}
+/*----------------------------------------------*/
+/*todo: diferent style notation.*/
+/*-------------------Верхняя линия--------------*/
+.upper_line{/*Основная часть*/
+	position: relative;
+	width:100%;
+	height: 10px;
+	background: #5fb2a1;
+	z-index:1;/*Что-бы тень не залезала наверх*/
+}
+.upper_line:after{/*Правая часть*/
+	content: "";
+	position: absolute;
+	background: #5fb2a1;
+	width: 25.7%;
+	height: 10px;
+	bottom: 0;
+	right: 0;
+	margin-bottom: -10px;
+	margin-right: -10px;
+	transform: skew(45deg);
+}
+/*----------------------------------------------*/
+
+/*-------------------Верхняя шапка--------------*/
+header{
+	position: relative;
+	height: 65px;
+}
+
+.SHADOW{
+	filter: drop-shadow(0px 4px 8px #5fb2a1);
+}
+/*todo: Bad practise: put few items to one line*/
+.triangle-left-bottom,
+.Company_Name,.middle_line,
+.parallelogram-right-bottom
+{
+   position: absolute;
+   bottom: 0px;  
+   float: left;
+   background: #bfe0d9;
+} 
+
+.Company_Name{
+	width: 246px;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Company_Name_link,
+.Company_Slogan
+{
+	display: inline-block;
+	font-family: Helios_Cond;
+	text-decoration: none;
+	font-size: 30px;	
+	color:black;
+}
+
+.Company_Slogan
+{
+	display: block;
+	margin-top: -2px;
+	color: #448375;
+	font-size: 14px;
+}
+
+.Word_Name{
+	color:#05614e;
+}
+.Word_com{
+	font-size: 15px;
+}
+
+.triangle-left-bottom{ 
+   border-top: 34px solid #bfe0d9; 
+   border-right: 34px solid transparent; 
+   left: 246px;
+   width: 0; 
+   height: 0; 
+   background: transparent;
+}
+
+.middle_line{
+	height: 33px;
+	width: 100%;
+    bottom: 32px;
+    left: 246px;
+}
+
+.parallelogram-right-bottom{ 
+  	content: "";
+	width: 10.2%;
+	height: 15px;
+	bottom: 17px;
+	right: 0;
+	margin-right: -10px;
+	/*Для совместимости браузеров*/
+	transform: skew(45deg);
+	/*---------------------------*/
+}
+/*----------------------------------------------*/
+
+/*---------------Картинка после шапки-----------*/
+
+.image_top{
+	display: block;
+	width: 100%;
+	height: 74px;
+	background: url(img/image_top.png) no-repeat right;
+	margin-top:-32px;
+	float: right; 
+	}
+/*----------------------------------------------*/
+
+/*---------Пунктирная линия на изображении------*/
+.Dashed_Line {
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 10px;
+	/*Для совместимости браузеров*/
+	-webkit-transform: skew(45deg);
+	   -moz-transform: skew(45deg);
+	     -o-transform: skew(45deg);
+	/*---------------------------*/
+	border-top: 1px dashed  #67b5a5;
+	border-right: 1px dashed #67b5a5;
+	margin-top: 29px;
+	}
+.Dashed_Line:after{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	width: 100vw;
+	border-top: 1px dashed #67b5a5;
+}
+/*----------------------------------------------*/
+
+/*----------------Блок с информацией------------*/
+.Main_Block {
+	padding-top: 10px;
+	position: relative;
+	margin-top: 2px;
+	display: block;
+	width: 100%;
+	height: 100vh;
+	background: #008469;
+	}
+
+.Main_Block:after{
+	position: absolute;
+	content: "";
+	width: 211px;
+	height: 12px;
+	left:0;
+	top:0;
+	margin-left: -10px;
+	margin-top: -10px;
+	transform: skew(45deg);
+	background: #008469
+}
+/*----------------------------------------------*/
+
+/*----------------Блок с новостями (слева)------*/
+.Company_News{
+	display:block;
+	left: 0px;
+	float: left;
+	width: 20.5%;
+	height: 100vh;
+	background: #008469;
+}
+.Company_News_Text{
+	font-family: Helios_Cond;
+	font-size: 16px;
+	color:white;
+	display: block;
+	margin-left: 10px; 
+	margin-bottom: 10px;
+}
+.Company_News_Block{
+	font-family: Verdana;
+	font-size: 12px;
+	color: white;
+	display: block;
+	/*todo: collect to one margin property*/
+	margin:0 15% 10px 10px;
+}
+.Company_News_Block>span{
+	font-family: Verdana_Bold;
+}
+/*----------------------------------------------*/
+
+/*-------------Блок статьи + навигации----------*/
+.Company_Information{/*общий блок родитель*/
+	position: relative;
+	display:block;
+	width: 79.5%;
+	float: right;
+	height: 100vh;
+	background: white;
+	border-top:3px solid #bfe0d9;
+}
+
+/*-----Навигация----*/
+nav{
+	padding-left: 24px;
+	padding-bottom: 4px;
+	/*todo: strange point*/
+	display: inline-block;
+	height: auto;
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(67,164,145,1) 18%, rgba(184,220,213,1) 66%, rgba(184,220,213,1) 100%);
+	text-shadow: 1px 1px 1px white;
+	box-shadow: 0px 4px 8px #5fb2a1;
+}
+
+nav>a{/*пункти навигации*/
+	text-transform: uppercase;
+	font-family: Helios_Cond_Bold;
+	text-decoration: none;
+	font-size: 14px;	
+	margin-top: 2px;
+	color:black;
+}
+nav>a:after{/*разделитель "/" после пунктов*/
+	padding-right: 10px;
+	padding-left: 10px;
+	content: "/";
+}
+nav>a:last-child:after{/*последний без разделителя "/" в конце*/
+	content: "";
+}
+/*------------------*/
+
+#Main_Content{ 	
+	position: absolute;
+    overflow: hidden;
+    z-index:1;
+    width: 100%;
+    height: 65%;
+	display: inline-block;
+	font-family: Verdana;
+	font-size: 13px;
+	
+}
+
+/* Блоки Для JavaScript IScroll 5*/
+#wrapper_for_scroll {
+	padding-left: 20px;
+    position: absolute;
+    top: 10px;
+    bottom: 48px;
+    left: 0;
+    width:90%;
+}
+
+.Title{/*Заголовок статьи*/
+	padding-left:23px;
+	/*todo: tab...*/
+	padding-bottom:	5px; 
+	font-family: Verdana;
+	font-size: 16px;
+}
+.Image_Set{/*Набор картинок справа*/
+	margin-top:-25px;
+	margin-left:23px; 
+	padding-right: 5px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+.Image_Set>img{/*Сама картинка*/
+	display:block;
+	margin-top: 32px;
+	border: 1px solid #04725c;
+}
+.Paragraph_header{/*Заголовки разделов*/
+	font-family: Verdana_Bold;
+	font-size: 14px;
+	padding-top:8px;
+	padding-bottom:	8px; 
+}
+/*----------------------------------------------*/
+
+/*----------------------Футер-------------------*/
+.Footer{
+	position: relative;
+	margin-top: -179px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+	z-index: 1;
+	overflow: hidden;
+}
+.Copyright_Block{
+	text-align: center;
+	color: #567280;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	left:-20px;
+	height: 40px;
+	width: 310px;
+	background: #bfe0d9;
+	transform: skew(45deg);
+	border-top: 2px solid #7fc1b4;
+	border-right: 2px solid #7fc1b4;
+}
+.Footer_Mid_Line{
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	left:286px;
+	height: 25px;
+	width: 100%;
+	background: black;
+	background: #bfe0d9;
+	border-top: 2px solid #7fc1b4;
+}
+.Copyright_Block>div{/*Текст в трансформирован наоборот*/
+	font-family: Verdana;
+	font-size: 11px;
+	padding-top: 8px;
+	-webkit-transform: skew(-45deg);
+	   -moz-transform: skew(-45deg);
+	     -o-transform: skew(-45deg);
+}
+.Footer_Right_Part{ /* Правая чать футера*/
+	display: block;
+	position: absolute;
+	bottom: 25px;
+	right: -20px;
+	height:20px;
+	width: 149px;
+	background: #bfe0d9;
+	border-top: 2px solid #7fc1b4;
+	border-left: 2px solid #7fc1b4;
+	transform: skew(-45deg);
+}
+/*----------------------------------------------*/
+

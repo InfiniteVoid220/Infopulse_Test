@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@font-face{
+	font-family: "Helios_Cond";
+	src: url(fonts/HE_CN.TTF);
+}
+/*todo: best practise: use font-weight for different weight*/
+
+@font-face{
+	font-family: "Helios_Cond_Bold";
+	src: url(fonts/HE_CN_B.TTF);
+}
+
+@font-face{
+	font-family: "Verdana";
+	src: url(fonts/verdana.ttf);
+}
+
+@font-face{
+	font-family: "Verdana_Bold";
+	src: url(fonts/verdanab.ttf);
+}
